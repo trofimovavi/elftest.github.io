@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .gallery, .faq, .contact-form {
+            padding: 20px;
+            display: none; /* Hide all sections by default */
+        }
+
+        .image-container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .image-container img {
+            width: 200px; /* Adjust as needed */
+            margin: 10px;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Image Gallery</h1>
+    <nav>
+        <ul>
+            <li><a href="#" onclick="showPage('gallery')">Home</a></li>
+            <li><a href="#" onclick="showPage('faq')">FAQ</a></li>
+            <li><a href="#" onclick="showPage('contact')">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <!-- Homepage Section -->
+    <section id="gallery" class="gallery">
+        <h2>Gallery</h2>
+        <div class="image-container">
+            <img src="https://files.elfsight.com/storage/f7e9a9de-578a-404d-9755-29717c16030a/dcb73f4a-d599-499a-bdb5-07c358b14314.jpeg" alt="Image 1">
+            <img src="https://files.elfsight.com/storage/f7e9a9de-578a-404d-9755-29717c16030a/897d03df-4754-4970-938d-00c9bc8d935b.jpeg" alt="Image 2">
+            <img src="https://files.elfsight.com/storage/f7e9a9de-578a-404d-9755-29717c16030a/5582ac66-1a47-40b9-a037-9fe23b2e6215.jpeg" alt="Image 3">
+            <!-- Add more images as needed -->
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <h3>What is this website about?</h3>
+            <p>This website is an image gallery showcasing various images.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>How can I contact you?</h3>
+            <p>Please visit the contact section for more information.</p>
+        </div>
+
+        <!-- Add more FAQs as needed -->
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-form">
+        <h2>Get in Touch</h2>
+
+        <form action="#" method="post">
+            <label for="name">Name:</label><br />
+            <input type="text" id="name" name="name" required><br />
+
+            <label for="email">Email:</label><br />
+            <input type="email" id="email" name="email" required><br />
+
+            <label for="message">Message:</label><br />
+            <textarea id="message" name="message" rows="4" required></textarea><br />
+
+            <button type="submit">Send Message</button>
+        </form>
+
+    </section> 
+</main>
+
+<footer>
+    <p>&copy; 2024 Image Gallery. All rights reserved.</p> 
+</footer>
+
+<script>
+    // Function to show the selected page and hide others
+    function showPage(page) {
+        document.querySelectorAll('main > section').forEach(section => {
+            section.style.display = 'none'; // Hide all sections
+        });
+        
+        document.getElementById(page).style.display = 'block'; // Show selected section
+    }
+
+    // Show the gallery page by default on load
+    window.onload = function() {
+        showPage('gallery');
+    };
+</script>
+
+</body>
+</html>
